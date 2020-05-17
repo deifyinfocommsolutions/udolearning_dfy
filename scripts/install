@@ -138,11 +138,13 @@ then
     ynh_replace_string --match_string="__USER__" --replace_string="$user" --target_file=../sources/www/index.html
 
     # Copy files to the right place
-    # cp "../sources/www/index.html" "$final_path/index.html"
+    cp "../sources/www/index.html" "$final_path/index.html"
 else
     # Copy files to the right place
-    # cp "../sources/www/index_no_sftp.html" "$final_path/index.html"
+    cp "../sources/www/index_no_sftp.html" "$final_path/index.html"
 fi
+
+rm "$final_path/index.html"
 
 if [ $with_mysql -eq 1 ]; then
     # Store the database access
